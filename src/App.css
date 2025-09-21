@@ -1,42 +1,236 @@
+/**
+ * ============================================================================
+ * STEP 1.1: Component-Specific Styles - App.css
+ * ============================================================================
+ * 
+ * CREATED: Project Setup Phase - Step 1.1 (Vite project creation)
+ * PURPOSE: Styles specific to the App component
+ * STATUS: Will be replaced with our social media app styles
+ * 
+ * This file demonstrates CSS concepts:
+ * 
+ * 1. CSS SELECTORS:
+ *    - ID selectors (#root)
+ *    - Class selectors (.logo, .card)
+ *    - Pseudo-classes (:hover)
+ *    - Descendant selectors (.logo.react)
+ * 
+ * 2. CSS PROPERTIES:
+ *    - Layout: max-width, margin, padding
+ *    - Visual: height, color, filter
+ *    - Animation: transition, animation, transform
+ *    - Responsive: @media queries
+ * 
+ * 3. CSS FEATURES:
+ *    - CSS Custom Properties (variables)
+ *    - Keyframe animations
+ *    - Media queries for accessibility
+ *    - CSS transitions and transforms
+ * 
+ * 4. REACT CSS INTEGRATION:
+ *    - CSS Modules behavior (scoped styles)
+ *    - Import in component files
+ *    - Automatic class name generation
+ * 
+ * LEARNING NOTES:
+ * - This is component-scoped CSS (not global)
+ * - Styles are automatically scoped to prevent conflicts
+ * - We'll replace this with our social media app styles
+ * - CSS-in-JS or CSS Modules are alternatives
+ */
+
+/* ============================================================================
+   ROOT CONTAINER - Main App Container Styles
+   ============================================================================ */
+
+/**
+ * #root - Main application container
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style the main container where React app is mounted
+ * 
+ * Key CSS Concepts:
+ * - max-width: Responsive design (prevents content from being too wide)
+ * - margin: 0 auto (centers the container horizontally)
+ * - padding: 2rem (internal spacing)
+ * - text-align: center (centers text content)
+ * 
+ * Why These Styles Matter:
+ * - Responsive design: Works on different screen sizes
+ * - Centered layout: Professional appearance
+ * - Consistent spacing: Better visual hierarchy
+ */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1280px;        /* Maximum width for large screens */
+  margin: 0 auto;           /* Centers the container horizontally */
+  padding: 2rem;            /* Internal spacing around content */
+  text-align: center;       /* Centers all text content */
 }
 
+/* ============================================================================
+   LOGO STYLES - Logo Animation and Hover Effects
+   ============================================================================ */
+
+/**
+ * .logo - Base logo styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style the Vite and React logos
+ * 
+ * Key CSS Concepts:
+ * - height: 6em (responsive sizing using em units)
+ * - padding: 1.5em (spacing around logos)
+ * - will-change: filter (optimization hint for browser)
+ * - transition: filter 300ms (smooth animation)
+ * 
+ * Why These Styles Matter:
+ * - Responsive sizing: Scales with font size
+ * - Performance: will-change optimizes animations
+ * - Smooth transitions: Better user experience
+ */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  height: 6em;              /* Logo height (responsive) */
+  padding: 1.5em;           /* Spacing around logo */
+  will-change: filter;      /* Browser optimization hint */
+  transition: filter 300ms; /* Smooth filter transitions */
 }
 
+/**
+ * .logo:hover - Hover effect for logos
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Add visual feedback on hover
+ * 
+ * Key CSS Concepts:
+ * - :hover pseudo-class (triggered when mouse hovers)
+ * - filter: drop-shadow (creates glowing effect)
+ * - Color with alpha: #646cffaa (semi-transparent)
+ * 
+ * Why This Matters:
+ * - Interactive feedback: Users know elements are clickable
+ * - Visual appeal: Glowing effect is engaging
+ * - Accessibility: Clear hover states
+ */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa); /* Glowing effect on hover */
+}
+
+/**
+ * .logo.react:hover - Special hover effect for React logo
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Different hover effect for React logo
+ * 
+ * Key CSS Concepts:
+ * - Descendant selector (.logo.react)
+ * - Specificity: More specific than .logo:hover
+ * - Different color: #61dafbaa (React brand color)
+ * 
+ * Why This Matters:
+ * - Brand consistency: Uses React's official color
+ * - Visual distinction: Different logos have different effects
+ * - CSS specificity: More specific rules override general ones
+ */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa); /* React brand color glow */
+}
+
+/* ============================================================================
+   ANIMATIONS - Keyframe Animations
+   ============================================================================ */
+
+/**
+ * @keyframes logo-spin - Rotating animation
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Create spinning animation for React logo
+ * 
+ * Key CSS Concepts:
+ * - @keyframes: Defines animation steps
+ * - from/to: Start and end states
+ * - transform: rotate() (rotates element)
+ * - 0deg to 360deg (full rotation)
+ * 
+ * Why This Matters:
+ * - Visual interest: Animated logos are engaging
+ * - Brand recognition: Spinning React logo is iconic
+ * - CSS animations: Smooth, performant animations
+ */
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg);    /* Start: no rotation */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg);  /* End: full rotation */
   }
 }
 
+/* ============================================================================
+   RESPONSIVE DESIGN - Media Queries
+   ============================================================================ */
+
+/**
+ * @media (prefers-reduced-motion: no-preference) - Accessibility consideration
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Respect user's motion preferences
+ * 
+ * Key CSS Concepts:
+ * - @media query (conditional CSS)
+ * - prefers-reduced-motion (accessibility feature)
+ * - :nth-of-type(2) (selects second <a> element)
+ * - animation property (applies keyframe animation)
+ * 
+ * Why This Matters:
+ * - Accessibility: Respects user preferences
+ * - Performance: Some users prefer no animations
+ * - Inclusive design: Considers all users
+ * - CSS specificity: Targets specific logo
+ */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear; /* Continuous slow rotation */
   }
 }
 
+/* ============================================================================
+   LAYOUT COMPONENTS - Card and Text Styles
+   ============================================================================ */
+
+/**
+ * .card - Card container styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style the interactive card section
+ * 
+ * Key CSS Concepts:
+ * - padding: 2em (internal spacing)
+ * - Creates visual grouping of content
+ * 
+ * Why This Matters:
+ * - Visual hierarchy: Groups related content
+ * - Consistent spacing: Professional appearance
+ * - Card pattern: Common UI design pattern
+ */
 .card {
-  padding: 2em;
+  padding: 2em;             /* Internal spacing for card content */
 }
 
+/**
+ * .read-the-docs - Footer text styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style the footer text
+ * 
+ * Key CSS Concepts:
+ * - color: #888 (muted gray color)
+ * - Creates visual hierarchy (less prominent)
+ * 
+ * Why This Matters:
+ * - Visual hierarchy: Footer text is less prominent
+ * - Readability: Muted color doesn't compete with main content
+ * - Design consistency: Follows common UI patterns
+ */
 .read-the-docs {
-  color: #888;
+  color: #888;              /* Muted gray color for footer text */
 }

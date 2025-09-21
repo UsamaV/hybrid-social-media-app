@@ -1,68 +1,302 @@
+/**
+ * ============================================================================
+ * STEP 1.1: Global Styles - index.css
+ * ============================================================================
+ * 
+ * CREATED: Project Setup Phase - Step 1.1 (Vite project creation)
+ * PURPOSE: Global styles applied to the entire application
+ * STATUS: Will be enhanced with our social media app design system
+ * 
+ * This file demonstrates CSS concepts:
+ * 
+ * 1. CSS RESET & NORMALIZATION:
+ *    - Removes browser default styles
+ *    - Creates consistent base styles
+ *    - Sets up typography system
+ * 
+ * 2. CSS CUSTOM PROPERTIES:
+ *    - :root selector for global variables
+ *    - CSS variables for theming
+ *    - Dark/light mode support
+ * 
+ * 3. RESPONSIVE DESIGN:
+ *    - Mobile-first approach
+ *    - Flexible layouts
+ *    - Media queries for different screen sizes
+ * 
+ * 4. ACCESSIBILITY:
+ *    - Focus states for keyboard navigation
+ *    - High contrast colors
+ *    - Readable typography
+ * 
+ * 5. MODERN CSS FEATURES:
+ *    - CSS Grid and Flexbox
+ *    - CSS custom properties
+ *    - Modern selectors
+ * 
+ * LEARNING NOTES:
+ * - Global styles affect the entire application
+ * - CSS custom properties enable theming
+ * - This file sets up the foundation for all other styles
+ * - We'll enhance this with our social media app design system
+ */
+
+/* ============================================================================
+   CSS CUSTOM PROPERTIES - Global Variables and Theming
+   ============================================================================ */
+
+/**
+ * :root - Global CSS custom properties (variables)
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Define global design tokens and theme variables
+ * 
+ * Key CSS Concepts:
+ * - :root selector (highest specificity, global scope)
+ * - CSS custom properties (--variable-name: value)
+ * - System font stack (fallback fonts)
+ * - Color scheme support (light/dark mode)
+ * - Typography settings (line-height, font-weight)
+ * 
+ * Why These Variables Matter:
+ * - Consistent theming across the app
+ * - Easy to change colors and fonts globally
+ * - Dark/light mode support
+ * - Better maintainability
+ * - Design system foundation
+ */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Typography System */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; /* System font stack */
+  line-height: 1.5;                    /* Readable line spacing */
+  font-weight: 400;                    /* Normal font weight */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Color Scheme Support */
+  color-scheme: light dark;            /* Tells browser about light/dark mode support */
+  color: rgba(255, 255, 255, 0.87);   /* Primary text color (dark mode) */
+  background-color: #242424;           /* Background color (dark mode) */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Font Rendering Optimization */
+  font-synthesis: none;                /* Prevents synthetic bold/italic */
+  text-rendering: optimizeLegibility; /* Optimizes text rendering */
+  -webkit-font-smoothing: antialiased; /* Smooth fonts on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale;  /* Smooth fonts on Firefox */
 }
 
+/* ============================================================================
+   LINK STYLES - Global Link Styling
+   ============================================================================ */
+
+/**
+ * a - Base link styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style all links consistently across the app
+ * 
+ * Key CSS Concepts:
+ * - Element selector (targets all <a> tags)
+ * - font-weight: 500 (medium weight for links)
+ * - color: #646cff (brand color for links)
+ * - text-decoration: inherit (removes default underline)
+ * 
+ * Why These Styles Matter:
+ * - Consistent link appearance
+ * - Brand color usage
+ * - Better visual hierarchy
+ * - Accessibility (clear link identification)
+ */
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: 500;                    /* Medium font weight for emphasis */
+  color: #646cff;                      /* Brand color for links */
+  text-decoration: inherit;            /* Removes default underline */
 }
+
+/**
+ * a:hover - Link hover state
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Provide visual feedback on hover
+ * 
+ * Key CSS Concepts:
+ * - :hover pseudo-class (triggered on mouse hover)
+ * - Different color for hover state
+ * - Smooth transition (defined elsewhere)
+ * 
+ * Why This Matters:
+ * - Interactive feedback for users
+ * - Clear hover states improve UX
+ * - Accessibility compliance
+ */
 a:hover {
-  color: #535bf2;
+  color: #535bf2;                      /* Darker shade on hover */
 }
 
+/* ============================================================================
+   BODY STYLES - Main Layout Container
+   ============================================================================ */
+
+/**
+ * body - Main page container
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Set up the main page layout and reset defaults
+ * 
+ * Key CSS Concepts:
+ * - margin: 0 (removes default browser margins)
+ * - display: flex (creates flexbox container)
+ * - place-items: center (centers content both horizontally and vertically)
+ * - min-width: 320px (minimum width for mobile)
+ * - min-height: 100vh (full viewport height)
+ * 
+ * Why These Styles Matter:
+ * - Removes browser default styles
+ * - Centers content on the page
+ * - Responsive design (works on all screen sizes)
+ * - Full viewport height usage
+ */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0;                           /* Remove default browser margins */
+  display: flex;                       /* Create flexbox container */
+  place-items: center;                 /* Center content horizontally and vertically */
+  min-width: 320px;                    /* Minimum width for mobile devices */
+  min-height: 100vh;                   /* Full viewport height */
 }
 
+/* ============================================================================
+   TYPOGRAPHY - Heading Styles
+   ============================================================================ */
+
+/**
+ * h1 - Main heading styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style the main page heading
+ * 
+ * Key CSS Concepts:
+ * - font-size: 3.2em (large, responsive font size)
+ * - line-height: 1.1 (tight line spacing for headings)
+ * 
+ * Why These Styles Matter:
+ * - Clear visual hierarchy
+ * - Responsive typography (scales with screen size)
+ * - Proper heading semantics
+ */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.2em;                    /* Large, responsive font size */
+  line-height: 1.1;                    /* Tight line spacing for headings */
 }
 
+/* ============================================================================
+   BUTTON STYLES - Interactive Elements
+   ============================================================================ */
+
+/**
+ * button - Base button styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Style all buttons consistently
+ * 
+ * Key CSS Concepts:
+ * - border-radius: 8px (rounded corners)
+ * - border: 1px solid transparent (invisible border for hover effect)
+ * - padding: 0.6em 1.2em (internal spacing)
+ * - font-size: 1em (inherits from parent)
+ * - font-weight: 500 (medium weight)
+ * - font-family: inherit (inherits from parent)
+ * - background-color: #1a1a1a (dark background)
+ * - cursor: pointer (shows it's clickable)
+ * - transition: border-color 0.25s (smooth color transition)
+ * 
+ * Why These Styles Matter:
+ * - Consistent button appearance
+ * - Clear interactive states
+ * - Accessibility (proper cursor and focus states)
+ * - Smooth animations improve UX
+ */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  border-radius: 8px;                  /* Rounded corners */
+  border: 1px solid transparent;       /* Invisible border for hover effect */
+  padding: 0.6em 1.2em;               /* Internal spacing */
+  font-size: 1em;                      /* Inherit font size */
+  font-weight: 500;                    /* Medium font weight */
+  font-family: inherit;                /* Inherit font family */
+  background-color: #1a1a1a;           /* Dark background */
+  cursor: pointer;                     /* Pointer cursor on hover */
+  transition: border-color 0.25s;      /* Smooth color transition */
 }
+
+/**
+ * button:hover - Button hover state
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Visual feedback on button hover
+ * 
+ * Key CSS Concepts:
+ * - :hover pseudo-class (triggered on mouse hover)
+ * - border-color: #646cff (shows border on hover)
+ * 
+ * Why This Matters:
+ * - Interactive feedback for users
+ * - Clear hover states improve UX
+ * - Accessibility compliance
+ */
 button:hover {
-  border-color: #646cff;
+  border-color: #646cff;               /* Show border on hover */
 }
+
+/**
+ * button:focus, button:focus-visible - Button focus states
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Accessibility for keyboard navigation
+ * 
+ * Key CSS Concepts:
+ * - :focus pseudo-class (triggered on focus)
+ * - :focus-visible pseudo-class (triggered on keyboard focus)
+ * - outline: 4px auto -webkit-focus-ring-color (browser default focus ring)
+ * 
+ * Why This Matters:
+ * - Accessibility for keyboard users
+ * - Clear focus indicators
+ * - WCAG compliance
+ * - Better user experience for all users
+ */
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto -webkit-focus-ring-color; /* Browser default focus ring */
 }
 
+/* ============================================================================
+   RESPONSIVE DESIGN - Media Queries
+   ============================================================================ */
+
+/**
+ * @media (prefers-color-scheme: light) - Light mode styles
+ * 
+ * CREATED: Step 1.1 - Vite template creation
+ * PURPOSE: Support both light and dark modes
+ * 
+ * Key CSS Concepts:
+ * - @media query (conditional CSS)
+ * - prefers-color-scheme: light (user's color preference)
+ * - Override dark mode colors with light mode colors
+ * - Different hover colors for light mode
+ * 
+ * Why This Matters:
+ * - Respects user's system preferences
+ * - Better accessibility (some users prefer light mode)
+ * - Modern web standard (prefers-color-scheme)
+ * - Inclusive design
+ */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #213547;                    /* Dark text for light background */
+    background-color: #ffffff;         /* White background */
   }
   a:hover {
-    color: #747bff;
+    color: #747bff;                    /* Different hover color for light mode */
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9;         /* Light background for buttons */
   }
 }
